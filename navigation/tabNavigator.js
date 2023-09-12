@@ -16,8 +16,25 @@ export default class TabNavigator extends React.Component {
     super(props)
     this.state = {
         light_theme:true,
+        isUpdated: false
     }
   }
+
+  renderFeed = props => {
+    return <Feed setUpdateToFalse={this.removeUpdated} {...props} />;
+  };
+
+  renderStory = props => {
+    return <CreateStory setUpdateToTrue={this.changeUpdated} {...props} />;
+  };
+
+  changeUpdated = () => {
+    this.setState({ isUpdated: true });
+  };
+
+  removeUpdated = () => {
+    this.setState({ isUpdated: false });
+  };
 
   async fetchUser() {
     let theme
@@ -64,8 +81,8 @@ export default class TabNavigator extends React.Component {
         activeColor='#ee8249'
         inactiveColor='gray'
       >
-        <Tab.Screen name="Feed" component={Feed} />
-        <Tab.Screen name="CreateStory" component={CreateStory} />
+        <Tab.Screen name="Feed" component={this.renderFeed} options={{ unmountOnBlur: true }}/>
+        <Tab.Screen name="CreateStory" component={this.renderStory} options={{ unmountOnBlur: true }}/>
       </Tab.Navigator>
     );
   }

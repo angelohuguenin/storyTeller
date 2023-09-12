@@ -9,9 +9,9 @@ const Drawer = createDrawerNavigator();
 export default function DrawerNavigator() {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen name="Home1" component={StackNavigator} />
-      <Drawer.Screen name="Profile" component={Profile} />
-      <Drawer.Screen name="LogOut" component={LogOut} />
+      <Drawer.Screen name="Home1" component={StackNavigator} options={{ unmountOnBlur: true }}/>
+      <Drawer.Screen name="Profile" component={Profile} options={{ unmountOnBlur: true }}/>
+      <Drawer.Screen name="LogOut" component={LogOut} options={{ unmountOnBlur: true }}/>
     </Drawer.Navigator>
   );
 }
