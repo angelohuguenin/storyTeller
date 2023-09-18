@@ -33,7 +33,7 @@ export default class CustomSidebarMenu extends Component {
       <View
         style={{
           flex: 1,
-          backgroundColor: this.state.light_theme ? "white" : "#15193c"
+          backgroundColor: this.state.light_theme ? "white" : "#035afc"
         }}
       >
         <Image

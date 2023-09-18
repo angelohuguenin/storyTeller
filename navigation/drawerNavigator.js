@@ -5,6 +5,7 @@ import Profile from '../screens/profile';
 import StackNavigator from './stackNavigator';
 import LogOut from '../screens/logOut';
 import firebase from 'firebase';
+import CustomSidebarMenu from '../screens/CustomSidebarMenu';
 
 const Drawer = createDrawerNavigator();
 
@@ -38,7 +39,7 @@ export default class DrawerNavigator extends React.Component {
       <Drawer.Navigator
         drawerContentOptions={{
           activeTintColor: "#e91e63",
-            inactiveTintColor: this.state.light_theme ? "black" : "white",
+            inactiveTintColor: this.state.light_theme ? "red" : "white",
             itemStyle: { marginVertical: 5 }
           }} 
         drawerContent={props => <CustomSidebarMenu {...props} />}
